@@ -8,9 +8,9 @@
   --cw-muted: #522c31;
   --cw-border: #522c31;
   --cw-cell: #fff;
-  --cw-block: #c9b098;
-  --cw-related: #dfcdbd;
-  --cw-active: #b03c37;
+  --cw-block: #f2ebde;
+  --cw-related: #b03c37;
+  --cw-active: #522c31;
   --cw-active-text: #f2ebde;
   --cw-correct: #c9b098;
   --cw-incorrect: #b03c37;
@@ -38,7 +38,7 @@
 }
 
 .cw-header, .cw-layout, .cw-tools, .cw-tool-group { display: flex; }
-.cw-header { align-items: flex-start; justify-content: space-between; gap: 16px; }
+.cw-header { align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: clamp(18px, 2vw, 28px); }
 .cw-title { margin: 0; color: #b03c37; font-family: "neue-haas-grotesk-display", sans-serif; font-size: clamp(30px, 4vw, 50px); font-weight: 500; line-height: 1; }
 .cw-author, .cw-description { color: var(--cw-muted); }
 .cw-author { margin: 6px 0 0; }
@@ -86,7 +86,7 @@
   cursor: pointer;
 }
 .cw-cell:focus { z-index: 2; outline: 3px solid var(--cw-text); outline-offset: -3px; }
-.cw-cell.is-related { background: var(--cw-related); }
+.cw-cell.is-related { color: var(--cw-active-text); background: var(--cw-related); }
 .cw-cell.is-active { color: var(--cw-active-text); background: var(--cw-active); }
 .cw-cell.is-correct { background: var(--cw-correct); }
 .cw-cell.is-incorrect { color: var(--cw-active-text); background: var(--cw-incorrect); }
@@ -114,7 +114,7 @@
   font-family: "neue-haas-grotesk-display", sans-serif;
   cursor: pointer;
 }
-.cw-clue-section button:hover { background: var(--cw-related); }
+.cw-clue-section button:hover { color: var(--cw-active-text); background: var(--cw-related); }
 .cw-clue-section button.is-active { color: var(--cw-active-text); background: var(--cw-active); }
 .cw-clue-number { font-weight: 500; }
 .cw-menu-button { display: none; }
