@@ -1,0 +1,43 @@
+{
+  "id": "kehlani-setlist-001",
+  "title": "Kehlani Setlist Crossword",
+  "author": "Wada Studio",
+  "description": "Fourteen Kehlani songs spanning fan favorites, soundtrack cuts, and the 2026 self-titled album.",
+  "solution": [
+    "O#ANOTHALUVA######",
+    "U#####A###########",
+    "T##DISTRACTION#C#N",
+    "T#####E########R#O",
+    "H#####T#AFTERHOURS",
+    "E##O##H##O#####I#U",
+    "W##O##E##L##S##S#C",
+    "I##O##C##D##T##E#H",
+    "NIGHTSLIKETHIS#C#T",
+    "D#A###U##D##L##O#H",
+    "O#N###B#####L##N#I",
+    "W#G############T#N",
+    "##SHOULDANEVER#R#G",
+    "##T############O##",
+    "#BACKANDFORTH##L##"
+  ],
+  "clues": {
+    "across": {
+      "2": "Lil Wayne joins Kehlani on this self-titled album cut",
+      "4": "SweetSexySavage single about a no-strings fling",
+      "7": "Viral dance hit from Crash",
+      "11": "While We Wait single featuring Ty Dolla $ign",
+      "13": "USHER-assisted track from Kehlani's self-titled album",
+      "14": "Missy Elliott collaboration from Kehlani's self-titled album"
+    },
+    "down": {
+      "1": "The 2025 single that became track 10 on Kehlani's self-titled album",
+      "3": "Masego-assisted track from It Was Good Until It Wasn't",
+      "5": "Track 16 on Kehlani's 2026 self-titled album",
+      "6": "Clipse-assisted track from Kehlani's self-titled album",
+      "8": "Kehlani song that won two R&B Grammys in 2026",
+      "9": "Track six on Kehlani's 2026 self-titled album",
+      "10": "Track 11 on Kehlani's 2026 self-titled album",
+      "12": "Kehlani cut from Suicide Squad: The Album"
+    }
+  }
+}
