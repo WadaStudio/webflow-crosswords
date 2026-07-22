@@ -2,7 +2,6 @@
 
 .crossword {
   --cw-font: "neue-haas-grotesk-display", sans-serif;
-  --cw-display-font: "neue-haas-grotesk-display", sans-serif;
   --cw-bg: #f2ebde;
   --cw-panel: #fffaf1;
   --cw-text: #0f0d0e;
@@ -26,11 +25,12 @@
   background: var(--cw-bg);
   padding: clamp(16px, 3vw, 36px);
   border-radius: var(--cw-radius);
+  font-weight: 400;
 }
 
 .cw-header, .cw-layout, .cw-tools, .cw-tool-group { display: flex; }
 .cw-header { align-items: flex-start; justify-content: space-between; gap: 16px; }
-.cw-title { margin: 0; color: #b03c37; font-family: var(--cw-display-font); font-size: clamp(30px, 4vw, 50px); font-weight: 500; line-height: 1; }
+.cw-title { margin: 0; color: #b03c37; font-family: inherit; font-size: clamp(30px, 4vw, 50px); font-weight: 500; line-height: 1; }
 .cw-author, .cw-description { color: var(--cw-muted); }
 .cw-author { margin: 6px 0 0; }
 .cw-description { max-width: 70ch; }
@@ -83,13 +83,13 @@
 .cw-cell.is-incorrect { color: var(--cw-active-text); background: var(--cw-incorrect); }
 .cw-cell.is-revealed { color: var(--cw-active-text); background: var(--cw-revealed); }
 .cw-block { background: var(--cw-block); cursor: default; }
-.cw-letter { font-size: clamp(14px, 3.4vw, 34px); font-weight: 600; line-height: 1; text-transform: uppercase; }
+.cw-letter { font-size: clamp(14px, 3.4vw, 34px); font-weight: 500; line-height: 1; text-transform: uppercase; }
 .cw-number { position: absolute; top: 2px; left: 3px; font-size: clamp(7px, 1.15vw, 12px); line-height: 1; }
 .cw-wide-grid .cw-letter { font-size: clamp(8px, 3.5cqw, 24px); }
 .cw-wide-grid .cw-number { font-size: clamp(5px, 1.5cqw, 10px); }
-.cw-current-clue { margin-top: 12px; padding: 14px 16px; min-height: 1.5em; color: var(--cw-active-text); background: var(--cw-active); font-weight: 700; }
+.cw-current-clue { margin-top: 12px; padding: 14px 16px; min-height: 1.5em; color: var(--cw-active-text); background: var(--cw-active); font-weight: 500; }
 .cw-clues { flex: 1 1 42%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 20px; overflow: visible; }
-.cw-clue-section h3 { margin: 0 0 10px; color: var(--cw-active); font-family: var(--cw-display-font); font-size: 24px; font-weight: 500; }
+.cw-clue-section h3 { margin: 0 0 10px; color: var(--cw-active); font-family: inherit; font-size: 24px; font-weight: 500; }
 .cw-clue-section ol { list-style: none; margin: 0; padding: 0; }
 .cw-clue-section li { margin: 0; }
 .cw-clue-section button {
@@ -107,18 +107,18 @@
 }
 .cw-clue-section button:hover { background: var(--cw-related); }
 .cw-clue-section button.is-active { color: var(--cw-active-text); background: var(--cw-active); }
-.cw-clue-number { font-weight: 700; }
+.cw-clue-number { font-weight: 500; }
 .cw-menu-button { display: none; }
 .cw-tools { flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 18px; padding-top: 18px; border-top: 1px solid color-mix(in srgb, var(--cw-text) 20%, transparent); }
 .cw-tool-group { flex-wrap: wrap; align-items: center; gap: 8px; }
-.cw-tool-group > span { font-weight: 700; }
+.cw-tool-group > span { font-weight: 500; }
 .cw-tools button, .cw-menu-button, .cw-complete button {
   padding: 9px 13px;
   color: var(--cw-button-text);
   background: var(--cw-button);
   border: 1px solid var(--cw-button);
   border-radius: 999px;
-  font-family: var(--cw-display-font);
+  font-family: inherit;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: .03em;
@@ -129,7 +129,7 @@
 .cw-complete { position: fixed; z-index: 9999; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0, 0, 0, .58); }
 .cw-complete[hidden] { display: none; }
 .cw-complete-card { width: min(440px, 100%); padding: 32px; color: var(--cw-text); background: var(--cw-bg); border: 3px solid var(--cw-active); border-radius: var(--cw-radius); text-align: center; box-shadow: 0 20px 70px rgba(15,13,14,.28); }
-.cw-complete-card h2 { margin-top: 0; color: var(--cw-active); font-family: var(--cw-display-font); font-weight: 500; }
+.cw-complete-card h2 { margin-top: 0; color: var(--cw-active); font-family: inherit; font-weight: 500; }
 .cw-error { padding: 24px; color: #7f1111; background: #ffe8e8; }
 .cw-cms-data { display: none !important; }
 
