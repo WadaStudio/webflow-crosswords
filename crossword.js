@@ -219,23 +219,23 @@
           <div class="cw-board-column">
             <div class="cw-grid" role="grid" aria-label="${this.escape(this.puzzle.title)}"></div>
             <div class="cw-current-clue" aria-live="polite"></div>
+            <div class="cw-tools" id="cw-tools-${this.escape(this.puzzle.id)}">
+              <div class="cw-tool-group" aria-label="Check answers">
+                <span>Check</span>
+                <button type="button" data-action="check-letter">Letter</button>
+                <button type="button" data-action="check-word">Word</button>
+                <button type="button" data-action="check-puzzle">Puzzle</button>
+              </div>
+              <div class="cw-tool-group" aria-label="Reveal answers">
+                <span>Reveal</span>
+                <button type="button" data-action="reveal-letter">Letter</button>
+                <button type="button" data-action="reveal-word">Word</button>
+                <button type="button" data-action="reveal-puzzle">Puzzle</button>
+              </div>
+              <button class="cw-reset" type="button" data-action="reset">Reset puzzle</button>
+            </div>
           </div>
           <div class="cw-clues" aria-label="Crossword clues"></div>
-        </div>
-        <div class="cw-tools" id="cw-tools-${this.escape(this.puzzle.id)}">
-          <div class="cw-tool-group" aria-label="Check answers">
-            <span>Check</span>
-            <button type="button" data-action="check-letter">Letter</button>
-            <button type="button" data-action="check-word">Word</button>
-            <button type="button" data-action="check-puzzle">Puzzle</button>
-          </div>
-          <div class="cw-tool-group" aria-label="Reveal answers">
-            <span>Reveal</span>
-            <button type="button" data-action="reveal-letter">Letter</button>
-            <button type="button" data-action="reveal-word">Word</button>
-            <button type="button" data-action="reveal-puzzle">Puzzle</button>
-          </div>
-          <button class="cw-reset" type="button" data-action="reset">Reset puzzle</button>
         </div>
         <div class="cw-complete" role="dialog" aria-modal="true" aria-labelledby="cw-complete-title-${this.escape(this.puzzle.id)}" hidden>
           <div class="cw-complete-card">
@@ -261,29 +261,6 @@
       this.renderGrid();
       this.renderClues();
       this.bindEvents();
-      this.syncCluePanelHeight();
-    }
-
-    syncCluePanelHeight() {
-      const board = this.root.querySelector(".cw-board-column");
-      const clues = this.root.querySelector(".cw-clues");
-      const desktop = window.matchMedia("(min-width: 768px)");
-
-      const sync = () => {
-        if (desktop.matches) {
-          const height = Math.ceil(board.getBoundingClientRect().height);
-          clues.style.height = `${height}px`;
-          clues.style.maxHeight = `${height}px`;
-        } else {
-          clues.style.removeProperty("height");
-          clues.style.removeProperty("max-height");
-        }
-      };
-
-      requestAnimationFrame(sync);
-      window.addEventListener("resize", sync, { passive: true });
-      desktop.addEventListener?.("change", sync);
-      if ("ResizeObserver" in window) new ResizeObserver(sync).observe(board);
     }
 
     renderGrid() {
