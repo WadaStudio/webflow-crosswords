@@ -9,12 +9,12 @@
   --cw-border: #522c31;
   --cw-cell: #fff;
   --cw-block: #f2ebde;
-  --cw-related: #b03c37;
-  --cw-active: #522c31;
+  --cw-related: #f16464;
+  --cw-active: #b03c37;
   --cw-active-text: #f2ebde;
   --cw-correct: #c9b098;
   --cw-incorrect: #b03c37;
-  --cw-revealed: #a68061;
+  --cw-revealed: #c9b098;
   --cw-button: #b03c37;
   --cw-button-text: #f2ebde;
   --cw-radius: 25px;
@@ -86,11 +86,11 @@
   cursor: pointer;
 }
 .cw-cell:focus { z-index: 2; outline: 3px solid var(--cw-text); outline-offset: -3px; }
-.cw-cell.is-related { color: var(--cw-active-text); background: var(--cw-related); }
+.cw-cell.is-related { color: var(--cw-text); background: var(--cw-related); }
 .cw-cell.is-active { color: var(--cw-active-text); background: var(--cw-active); }
 .cw-cell.is-correct { background: var(--cw-correct); }
 .cw-cell.is-incorrect { color: var(--cw-active-text); background: var(--cw-incorrect); }
-.cw-cell.is-revealed { color: var(--cw-active-text); background: var(--cw-revealed); }
+.cw-cell.is-revealed { color: var(--cw-text); background: var(--cw-revealed); }
 .cw-block { background: var(--cw-block); cursor: default; }
 .cw-letter { font-size: clamp(14px, 3.4vw, 34px); font-weight: 500; line-height: 1; text-transform: uppercase; }
 .cw-number { position: absolute; top: 2px; left: 3px; font-size: clamp(7px, 1.15vw, 12px); line-height: 1; }
@@ -114,7 +114,7 @@
   font-family: "neue-haas-grotesk-display", sans-serif;
   cursor: pointer;
 }
-.cw-clue-section button:hover { color: var(--cw-active-text); background: var(--cw-related); }
+.cw-clue-section button:hover { color: var(--cw-text); background: var(--cw-related); }
 .cw-clue-section button.is-active { color: var(--cw-active-text); background: var(--cw-active); }
 .cw-clue-number { font-weight: 500; }
 .cw-menu-button { display: none; }
