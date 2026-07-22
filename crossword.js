@@ -137,6 +137,7 @@
         title: String(puzzle.title || "Crossword"),
         author: String(puzzle.author || ""),
         description: String(puzzle.description || ""),
+        autoCheck: Boolean(puzzle.autoCheck),
         solution,
         clues: {
           across: puzzle.clues?.across || {},
@@ -441,7 +442,10 @@
       if (!this.activeCell) return;
       const cell = this.cells[this.activeCell.row][this.activeCell.col];
       this.setCellValue(cell, letter);
-      cell.classList.remove("is-incorrect");
+      cell.classList.remove("is-correct", "is-incorrect");
+      if (this.puzzle.autoCheck && letter !== this.solutionAt(cell)) {
+        cell.classList.add("is-incorrect");
+      }
       this.save();
       this.moveWithinEntry(1);
       this.testCompletion();
@@ -601,6 +605,9 @@
           if (!this.isOpen(row, col)) return;
           this.setCellValue(this.cells[row][col], value || "");
           this.cells[row][col].classList.toggle("is-revealed", Boolean(revealed));
+          if (this.puzzle.autoCheck && value && !revealed) {
+            this.cells[row][col].classList.toggle("is-incorrect", value !== this.solutionAt(this.cells[row][col]));
+          }
         });
         this.completed = Boolean(saved.completed);
       } catch (_) { /* Ignore malformed or unavailable saved data. */ }
