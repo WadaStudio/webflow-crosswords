@@ -257,6 +257,7 @@
 
       this.grid = this.root.querySelector(".cw-grid");
       this.grid.style.setProperty("--cw-columns", this.cols);
+      this.grid.style.setProperty("--cw-rows", this.rows);
       this.renderGrid();
       this.renderClues();
       this.bindEvents();
