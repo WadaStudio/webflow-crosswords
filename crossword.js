@@ -260,6 +260,29 @@
       this.renderGrid();
       this.renderClues();
       this.bindEvents();
+      this.syncCluePanelHeight();
+    }
+
+    syncCluePanelHeight() {
+      const board = this.root.querySelector(".cw-board-column");
+      const clues = this.root.querySelector(".cw-clues");
+      const desktop = window.matchMedia("(min-width: 768px)");
+
+      const sync = () => {
+        if (desktop.matches) {
+          const height = Math.ceil(board.getBoundingClientRect().height);
+          clues.style.height = `${height}px`;
+          clues.style.maxHeight = `${height}px`;
+        } else {
+          clues.style.removeProperty("height");
+          clues.style.removeProperty("max-height");
+        }
+      };
+
+      requestAnimationFrame(sync);
+      window.addEventListener("resize", sync, { passive: true });
+      desktop.addEventListener?.("change", sync);
+      if ("ResizeObserver" in window) new ResizeObserver(sync).observe(board);
     }
 
     renderGrid() {

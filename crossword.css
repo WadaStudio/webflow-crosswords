@@ -68,7 +68,7 @@
 .cw-letter { font-size: clamp(14px, 3.4vw, 34px); font-weight: 600; line-height: 1; text-transform: uppercase; }
 .cw-number { position: absolute; top: 2px; left: 3px; font-size: clamp(7px, 1.15vw, 12px); line-height: 1; }
 .cw-current-clue { margin-top: 12px; padding: 12px 14px; min-height: 1.5em; background: var(--cw-panel); font-weight: 600; }
-.cw-clues { flex: 1 1 42%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-height: min(70vh, 680px); overflow: auto; }
+.cw-clues { flex: 1 1 42%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 20px; overflow-y: auto; overflow-x: hidden; padding-right: 10px; scrollbar-gutter: stable; }
 .cw-clue-section h3 { margin: 0 0 8px; font-size: 20px; }
 .cw-clue-section ol { list-style: none; margin: 0; padding: 0; }
 .cw-clue-section li { margin: 0; }
@@ -112,7 +112,7 @@
 @media (max-width: 767px) {
   .crossword { padding: 12px; }
   .cw-layout { display: block; }
-  .cw-clues { margin-top: 18px; max-height: none; }
+  .cw-clues { margin-top: 18px; max-height: none; padding-right: 0; overflow: visible; scrollbar-gutter: auto; }
   .cw-menu-button { display: inline-block; }
   .cw-tools { display: none; }
   .cw-tools-open .cw-tools { display: flex; }
