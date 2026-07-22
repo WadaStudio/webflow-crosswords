@@ -117,7 +117,7 @@
   color: var(--cw-button-text);
   background: var(--cw-button);
   border: 1px solid var(--cw-button);
-  border-radius: 0;
+  border-radius: 999px;
   font-family: var(--cw-display-font);
   font-weight: 500;
   text-transform: uppercase;
